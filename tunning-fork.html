@@ -1,1 +1,185 @@
-test
+Paste this into `tunning-fork.html`:
+
+```html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="My Tuning Fork is a free, ad-free Android app for voice and pitch training.">
+  <title>My Tuning Fork</title>
+
+  <style>
+    :root {
+      --ink: #302d27;
+      --muted: #746f66;
+      --paper: #faf8f3;
+      --card: #ffffff;
+      --accent: #75684c;
+      --accent-dark: #5c513b;
+      --line: #e8e1d6;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    .page {
+      width: min(720px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 72px 0 56px;
+    }
+
+    .icon {
+      display: grid;
+      width: 56px;
+      height: 56px;
+      place-items: center;
+      border-radius: 17px;
+      background: var(--accent);
+      color: white;
+      font-size: 28px;
+    }
+
+    h1 {
+      margin: 24px 0 12px;
+      font-size: clamp(2.5rem, 8vw, 4.8rem);
+      line-height: 1;
+      letter-spacing: -0.06em;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 1.35rem;
+    }
+
+    p {
+      color: var(--muted);
+    }
+
+    .intro {
+      max-width: 590px;
+      font-size: 1.2rem;
+    }
+
+    .card {
+      margin-top: 30px;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: var(--card);
+    }
+
+    ul {
+      margin: 16px 0 0;
+      padding-left: 22px;
+      color: var(--muted);
+    }
+
+    li + li {
+      margin-top: 8px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 11px 18px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      font-weight: 650;
+    }
+
+    .button:hover {
+      background: var(--accent-dark);
+    }
+
+    .button.secondary {
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--accent-dark);
+    }
+
+    footer {
+      margin-top: 48px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    a {
+      color: var(--accent-dark);
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <div class="icon" aria-hidden="true">♪</div>
+
+    <h1>My Tuning Fork</h1>
+
+    <p class="intro">
+      A simple, free Android app for warming up your voice, practising scales,
+      and finding the right pitch. Choose a tone, listen carefully, and sing along.
+    </p>
+
+    <section class="card">
+      <h2>Simple voice practice</h2>
+
+      <p>
+        My Tuning Fork gives you clear reference tones without ads,
+        accounts, or complicated settings.
+      </p>
+
+      <ul>
+        <li>Useful tones for lower, middle, and higher vocal practice</li>
+        <li>Helpful for warm-ups, scales, and pitch exercises</li>
+        <li>Simple controls designed for quick practice</li>
+        <li>Free to use with no advertising</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Support the developer</h2>
+
+      <p>
+        If My Tuning Fork helps with your practice, you can support its
+        continued development. Thank you for helping keep the app free and ad-free.
+      </p>
+
+      <div class="buttons">
+        <!-- Replace # with the future donation link. -->
+        <a class="button" href="#">Support the developer</a>
+
+        <!-- Replace # with the future Google Form link. -->
+        <a class="button secondary" href="#">Send feedback</a>
+      </div>
+    </section>
+
+    <footer>
+      My Tuning Fork · Free voice and pitch practice for Android
+    </footer>
+  </main>
+</body>
+</html>
+```
+
+The two links are intentionally set to `#`:
+
+- `Support the developer` → replace with your donation URL
+- `Send feedback` → replace with your Google Form URL
