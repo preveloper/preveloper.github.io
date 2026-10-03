@@ -5,8 +5,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description"
-    content="Currency Converter is a simple mobile currency conversion app with daily exchange rates and favorite currencies." />
-  <title>Currency Converter</title>
+    content="Learn more about Currency Converter, a simple mobile app for daily exchange rates and favorite currencies." />
+  <title>About Currency Converter</title>
   <style>
     :root {
       color-scheme: light;
@@ -19,9 +19,7 @@
       --border: #dfe5f2;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -31,7 +29,7 @@
     }
 
     header {
-      padding: 72px 24px 88px;
+      padding: 64px 24px 72px;
       color: #fff;
       background: linear-gradient(135deg, var(--blue-dark), var(--blue));
     }
@@ -41,8 +39,23 @@
       margin: 0 auto;
     }
 
+    .hero {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .logo {
+      width: 132px;
+      height: 132px;
+      flex: 0 0 auto;
+      border: 5px solid rgba(255, 255, 255, .8);
+      border-radius: 30px;
+      box-shadow: 0 16px 34px rgba(9, 25, 78, .3);
+    }
+
     .eyebrow {
-      margin: 0 0 12px;
+      margin: 0 0 10px;
       color: #dbe5ff;
       font-size: .8rem;
       font-weight: 700;
@@ -50,42 +63,27 @@
       text-transform: uppercase;
     }
 
-    h1,
-    h2 {
-      line-height: 1.15;
-    }
-
-    h1 {
-      max-width: 680px;
-      margin: 0;
-      font-size: clamp(2.4rem, 7vw, 4.6rem);
-    }
-
-    h2 {
-      margin-top: 0;
-      font-size: 1.7rem;
-    }
+    h1, h2 { line-height: 1.15; }
+    h1 { margin: 0; font-size: clamp(2.3rem, 6vw, 4.2rem); }
+    h2 { margin-top: 0; font-size: 1.65rem; }
 
     .lead {
-      max-width: 650px;
-      margin: 24px 0 0;
+      max-width: 620px;
+      margin: 18px 0 0;
       color: #edf2ff;
-      font-size: 1.2rem;
+      font-size: 1.15rem;
     }
 
-    main {
-      padding: 48px 0 72px;
-    }
+    main { padding: 48px 0 72px; }
 
     .grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
-      margin: 32px 0 56px;
+      margin-bottom: 28px;
     }
 
-    .card,
-    .section {
+    .card, .section {
       padding: 28px;
       background: var(--surface);
       border: 1px solid var(--border);
@@ -93,30 +91,36 @@
       box-shadow: 0 8px 24px rgba(23, 57, 142, .06);
     }
 
-    .card h2 {
-      margin-bottom: 10px;
-      font-size: 1.25rem;
+    .card h2 { margin-bottom: 10px; font-size: 1.2rem; }
+    .card p, .section p { margin: 0; color: var(--muted); }
+    .section + .section { margin-top: 20px; }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
     }
 
-    .card p,
-    .section p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .section+.section {
-      margin-top: 20px;
-    }
-
-    .feedback {
+    .button {
       display: inline-block;
-      margin-top: 18px;
-      padding: 10px 16px;
-      color: var(--blue-dark);
-      background: #e7edff;
+      padding: 11px 18px;
       border-radius: 999px;
       font-weight: 700;
+      text-decoration: none;
     }
+
+    .button-primary {
+      color: #fff;
+      background: var(--blue);
+    }
+
+    .button-secondary {
+      color: var(--blue-dark);
+      background: #e7edff;
+    }
+
+    .button:hover { filter: brightness(.96); }
 
     footer {
       padding: 24px;
@@ -126,30 +130,34 @@
     }
 
     @media (max-width: 700px) {
-      header {
-        padding: 56px 0 64px;
-      }
-
-      .grid {
-        grid-template-columns: 1fr;
-      }
-
-      .container {
-        width: min(100% - 32px, 960px);
-      }
+      header { padding: 48px 0 56px; }
+      .hero { align-items: flex-start; flex-direction: column; gap: 24px; }
+      .logo { width: 104px; height: 104px; border-radius: 24px; }
+      .grid { grid-template-columns: 1fr; }
+      .container { width: min(100% - 32px, 960px); }
     }
   </style>
 </head>
 
 <body>
   <header>
-    <div class="container">
-      <p class="eyebrow">Currency Converter</p>
-      <h1>Simple currency conversion, wherever you need it.</h1>
-      <p class="lead">
-        A focused mobile app for checking exchange rates and converting between
-        currencies without unnecessary complexity.
-      </p>
+    <div class="container hero">
+      <img class="logo" src="app.png" alt="Currency Converter app logo" />
+      <div>
+        <p class="eyebrow">About Currency Converter</p>
+        <h1>Simple currency conversion for everyday use.</h1>
+        <p class="lead">
+          Check daily exchange rates, convert amounts quickly, and keep your
+          most-used currencies close at hand.
+        </p>
+        <div class="actions">
+          <a class="button button-primary" href="https://play.google.com/store/apps/details?id=com.preveloper.currency_exchange"
+            target="_blank" rel="noopener noreferrer">
+            Get it on Google Play
+          </a>
+          <a class="button button-secondary" href="#feedback">Send feedback</a>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -170,11 +178,11 @@
     </section>
 
     <section class="section">
-      <h2>About the app</h2>
+      <h2>Designed to stay focused</h2>
       <p>
-        Currency Converter is intentionally small and straightforward. It is
-        designed for everyday reference when you need a quick conversion and
-        do not want to navigate through a complicated finance application.
+        Currency Converter is intentionally small and straightforward. It gives
+        you the information you need for a quick conversion without turning a
+        simple task into a complicated finance experience.
       </p>
     </section>
 
@@ -184,9 +192,12 @@
         Have a suggestion or found a problem? Tell us what you think through
         the feedback form.
       </p>
-      <a class="feedback" href="https://forms.gle/wWsNoY3C9eqphzzW9" target="_blank" rel="noopener noreferrer">
-        Send feedback
-      </a>
+      <div class="actions">
+        <a class="button button-secondary" href="https://forms.gle/wWsNoY3C9eqphzzW9" target="_blank"
+          rel="noopener noreferrer">
+          Send feedback
+        </a>
+      </div>
     </section>
   </main>
 
