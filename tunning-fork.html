@@ -1,180 +1,122 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="My Tuning Fork is a free, ad-free Android app for voice and pitch training.">
-  <title>My Tuning Fork</title>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="My tuning fork is a simple voice and pitch training app for Android.">
+    <title>My tuning fork</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #2f2c26;
+        --muted: #6e6a61;
+        --paper: #fbfaf7;
+        --accent: #75684c;
+        --accent-dark: #5e533c;
+        --line: #e8e2d8;
+      }
 
-  <style>
-    :root {
-      --ink: #302d27;
-      --muted: #746f66;
-      --paper: #faf8f3;
-      --card: #ffffff;
-      --accent: #75684c;
-      --accent-dark: #5c513b;
-      --line: #e8e1d6;
-    }
+      * { box-sizing: border-box; }
 
-    * {
-      box-sizing: border-box;
-    }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font: 16px/1.6 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
 
-    body {
-      margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.6;
-    }
+      main {
+        width: min(680px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: 72px 0 56px;
+      }
 
-    .page {
-      width: min(720px, calc(100% - 40px));
-      margin: 0 auto;
-      padding: 72px 0 56px;
-    }
+      .mark {
+        display: inline-grid;
+        width: 52px;
+        height: 52px;
+        place-items: center;
+        border-radius: 16px;
+        background: var(--accent);
+        color: white;
+        font-size: 26px;
+      }
 
-    .icon {
-      display: grid;
-      width: 56px;
-      height: 56px;
-      place-items: center;
-      border-radius: 17px;
-      background: var(--accent);
-      color: white;
-      font-size: 28px;
-    }
+      h1 {
+        margin: 22px 0 12px;
+        font-size: clamp(2.3rem, 8vw, 4.5rem);
+        line-height: 1;
+        letter-spacing: -0.05em;
+      }
 
-    h1 {
-      margin: 24px 0 12px;
-      font-size: clamp(2.5rem, 8vw, 4.8rem);
-      line-height: 1;
-      letter-spacing: -0.06em;
-    }
+      h2 { margin: 42px 0 10px; font-size: 1.3rem; }
+      p { color: var(--muted); }
 
-    h2 {
-      margin: 0 0 12px;
-      font-size: 1.35rem;
-    }
+      .intro { max-width: 560px; font-size: 1.15rem; }
 
-    p {
-      color: var(--muted);
-    }
+      .card {
+        margin-top: 28px;
+        padding: 24px;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: white;
+      }
 
-    .intro {
-      max-width: 590px;
-      font-size: 1.2rem;
-    }
+      .buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
 
-    .card {
-      margin-top: 30px;
-      padding: 26px;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      background: var(--card);
-    }
+      a.button {
+        display: inline-block;
+        padding: 11px 17px;
+        border-radius: 999px;
+        background: var(--accent);
+        color: white;
+        text-decoration: none;
+        font-weight: 650;
+      }
 
-    ul {
-      margin: 16px 0 0;
-      padding-left: 22px;
-      color: var(--muted);
-    }
-
-    li + li {
-      margin-top: 8px;
-    }
-
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 22px;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 11px 18px;
-      border-radius: 999px;
-      background: var(--accent);
-      color: white;
-      text-decoration: none;
-      font-weight: 650;
-    }
-
-    .button:hover {
-      background: var(--accent-dark);
-    }
-
-    .button.secondary {
-      border: 1px solid var(--line);
-      background: transparent;
-      color: var(--accent-dark);
-    }
-
-    footer {
-      margin-top: 48px;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    a {
-      color: var(--accent-dark);
-    }
-  </style>
-</head>
-
-<body>
-  <main class="page">
-    <div class="icon" aria-hidden="true">♪</div>
-
-    <h1>My Tuning Fork</h1>
-
-    <p class="intro">
-      A simple, free Android app for warming up your voice, practising scales,
-      and finding the right pitch. Choose a tone, listen carefully, and sing along.
-    </p>
-
-    <section class="card">
-      <h2>Simple voice practice</h2>
-
-      <p>
-        My Tuning Fork gives you clear reference tones without ads,
-        accounts, or complicated settings.
+      a.button:hover { background: var(--accent-dark); }
+      a.button.secondary { background: transparent; color: var(--accent-dark); border: 1px solid var(--line); }
+      footer { margin-top: 52px; color: var(--muted); font-size: .9rem; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="mark" aria-hidden="true">♪</div>
+      <h1>My tuning fork</h1>
+      <p class="intro">
+        A simple Android app for warming up your voice, practising scales,
+        and finding the right pitch. Choose a tone, listen carefully, and sing along.
       </p>
 
-      <ul>
-        <li>Useful tones for lower, middle, and higher vocal practice</li>
-        <li>Helpful for warm-ups, scales, and pitch exercises</li>
-        <li>Simple controls designed for quick practice</li>
-        <li>Free to use with no advertising</li>
-      </ul>
-    </section>
+      <section class="card" aria-labelledby="support-title">
+        <h2 id="support-title">Support the developer</h2>
+        <p>
+          My tuning fork is free and has no ads. If it is useful to you,
+          your support will help me keep improving it.
+        </p>
+        <div class="buttons">
+          <a
+            class="button"
+            href="https://paypal.biz/preveloper"
+            target="_blank"
+            rel="noopener"
+          >
+            Support the developer
+          </a>
+          <a
+            class="button secondary"
+            href="https://forms.gle/ec7vS6AGnBXTjAsx7"
+            target="_blank"
+            rel="noopener"
+          >
+            Send feedback
+          </a>
+        </div>
+      </section>
 
-    <section class="card">
-      <h2>Support the developer</h2>
-
-      <p>
-        If My Tuning Fork helps with your practice, you can support its
-        continued development. Thank you for helping keep the app free and ad-free.
-      </p>
-
-      <div class="buttons">
-        <!-- Replace # with the future donation link. -->
-        <a class="button" href="#">Support the developer</a>
-
-        <!-- Replace # with the future Google Form link. -->
-        <a 
-          class="button secondary"
-          href="https://forms.gle/ec7vS6AGnBXTjAsx7"
->
-          Send feedback</a>
-      </div>
-    </section>
-
-    <footer>
-      My Tuning Fork · Free voice and pitch practice for Android
-    </footer>
-  </main>
-</body>
+      <footer>
+        Contact: <a href="mailto:preveloper@gmail.com">preveloper@gmail.com</a>
+      </footer>
+    </main>
+  </body>
 </html>
