@@ -1,1 +1,160 @@
 
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Currency Converter is a simple mobile currency conversion app with daily exchange rates and favorite currencies."
+    />
+    <title>Currency Converter</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --blue: #2457d6;
+        --blue-dark: #17398e;
+        --ink: #172033;
+        --muted: #5e687c;
+        --surface: #ffffff;
+        --background: #f4f7ff;
+        --border: #dfe5f2;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: var(--background);
+        font: 16px/1.6 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      header {
+        padding: 72px 24px 88px;
+        color: #fff;
+        background: linear-gradient(135deg, var(--blue-dark), var(--blue));
+      }
+
+      .container {
+        width: min(960px, calc(100% - 48px));
+        margin: 0 auto;
+      }
+
+      .eyebrow {
+        margin: 0 0 12px;
+        color: #dbe5ff;
+        font-size: .8rem;
+        font-weight: 700;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+      }
+
+      h1, h2 { line-height: 1.15; }
+      h1 { max-width: 680px; margin: 0; font-size: clamp(2.4rem, 7vw, 4.6rem); }
+      h2 { margin-top: 0; font-size: 1.7rem; }
+
+      .lead {
+        max-width: 650px;
+        margin: 24px 0 0;
+        color: #edf2ff;
+        font-size: 1.2rem;
+      }
+
+      main { padding: 48px 0 72px; }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin: 32px 0 56px;
+      }
+
+      .card, .section {
+        padding: 28px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        box-shadow: 0 8px 24px rgba(23, 57, 142, .06);
+      }
+
+      .card h2 { margin-bottom: 10px; font-size: 1.25rem; }
+      .card p, .section p { margin: 0; color: var(--muted); }
+      .section + .section { margin-top: 20px; }
+
+      .feedback {
+        display: inline-block;
+        margin-top: 18px;
+        padding: 10px 16px;
+        color: var(--blue-dark);
+        background: #e7edff;
+        border-radius: 999px;
+        font-weight: 700;
+      }
+
+      footer {
+        padding: 24px;
+        color: var(--muted);
+        border-top: 1px solid var(--border);
+        text-align: center;
+      }
+
+      @media (max-width: 700px) {
+        header { padding: 56px 0 64px; }
+        .grid { grid-template-columns: 1fr; }
+        .container { width: min(100% - 32px, 960px); }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <p class="eyebrow">Currency Converter</p>
+        <h1>Simple currency conversion, wherever you need it.</h1>
+        <p class="lead">
+          A focused mobile app for checking exchange rates and converting between
+          currencies without unnecessary complexity.
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="grid" aria-label="Application features">
+        <article class="card">
+          <h2>Convert quickly</h2>
+          <p>Choose a source and target currency, enter an amount, and see the converted value immediately.</p>
+        </article>
+        <article class="card">
+          <h2>Daily rates</h2>
+          <p>The app uses a daily exchange-rate snapshot, keeping the experience consistent throughout the day.</p>
+        </article>
+        <article class="card">
+          <h2>Save favorites</h2>
+          <p>Star the currencies you use most often so they are easier to find in the currency picker.</p>
+        </article>
+      </section>
+
+      <section class="section">
+        <h2>About the app</h2>
+        <p>
+          Currency Converter is intentionally small and straightforward. It is
+          designed for everyday reference when you need a quick conversion and
+          do not want to navigate through a complicated finance application.
+        </p>
+      </section>
+
+      <section class="section" id="feedback">
+        <h2>Feedback</h2>
+        <p>
+          We are preparing a feedback page. A feedback link will be added here
+          once that page is ready.
+        </p>
+        <span class="feedback">Feedback link coming soon</span>
+      </section>
+    </main>
+
+    <footer>
+      Currency Converter · Simple, focused, and ad-free.
+    </footer>
+  </body>
+</html>
